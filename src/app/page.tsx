@@ -6,15 +6,15 @@ import SimpleMarqueeDemo from "@/components/SimpleMarqueeDemo";
 
 export default function Home() {
   const [songInput, setSongInput] = useState('');
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!songInput.trim()) return;
 
-    setLoading(true);
+    // setLoading(true);
 
-    const res = await fetch('/api/search', {
+    const res = await fetch('/api/search', {  
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: songInput }),
@@ -22,7 +22,7 @@ export default function Home() {
 
     const data = await res.json();
     console.log('🎵 Results:', data);
-    setLoading(false);
+    // setLoading(false);
   };
 
   return (
