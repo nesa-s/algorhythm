@@ -1,16 +1,21 @@
 // /src/app/api/search/route.ts
 
 import { NextResponse } from 'next/server';
+import { getSpotifyAccessToken } from "@/lib/spotify"
 
 export async function POST(req: Request) {
   const { query } = await req.json();
+  console.log('Received search query:', query);
 
-  // Mock similar song results (eventually you'll replace this with real scraping or ML)
-  const similarSongs = [
-    { title: 'Sunroof', artist: 'Nicky Youre' },
-    { title: '10:35', artist: 'Tiësto, Tate McRae' },
-    { title: 'Daylight', artist: 'David Kushner' },
-  ];
+  const token = await getSpotifyAccessToken();
 
-  return NextResponse.json({ input: query, results: similarSongs });
+  const res = await fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=5`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await res.json();
+  console.log('Spotify API response data:', JSON.stringify(data, null, 2));
+
+  return NextResponse.json(data);
 }
