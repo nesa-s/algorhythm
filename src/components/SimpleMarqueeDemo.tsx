@@ -20,57 +20,58 @@ const albums: Album[] = [
   },
   {
     coverArt:
-      "https://ia800905.us.archive.org/5/items/mbid-9da1a863-f3f2-4618-bdce-f0c88c055ba5/mbid-9da1a863-f3f2-4618-bdce-f0c88c055ba5-8201721911_thumb500.jpg",
-    title: "✝",
-    artist: "Justice",
+    "https://archive.org/download/TameImpalaTheSlowRush/The%20Slow%20Rush.png",
+    title: "The Slow Rush",
+    artist: "Tame Impala",
   },
   {
     coverArt:
-      "https://ia800909.us.archive.org/12/items/mbid-ee618541-23df-4973-afb7-e2d9f02e03d8/mbid-ee618541-23df-4973-afb7-e2d9f02e03d8-8154031977_thumb500.jpg",
-    title: "By Your Side",
-    artist: "Breakbot",
+    "https://archive.org/download/nirvana-nevermind_202504/1-booklet%2001.jpg",
+    title: "Nevermind",
+    artist: "Nirvana",
   },
   {
     coverArt:
-      "https://ia800804.us.archive.org/20/items/mbid-3adfe4c6-0fa2-4813-a212-058d9a99b4a8/mbid-3adfe4c6-0fa2-4813-a212-058d9a99b4a8-16639897570_thumb500.jpg",
-    title: "Still Waters",
-    artist: "Breakbot",
+    "https://archive.org/download/the-marias-submarine/1200x1200bf-60.jpg",
+    title: "Submarine",
+    artist: "The Marias",
   },
   {
     coverArt:
-      "https://ia803403.us.archive.org/14/items/mbid-a7fcead9-ab9d-3d15-bb0d-a2b1945517dd/mbid-a7fcead9-ab9d-3d15-bb0d-a2b1945517dd-8093147470_thumb500.jpg",
-    title: "Fancy Footwork",
-    artist: "Chromeo",
+    "https://archive.org/download/New_Division-_The_Eyes_2015/cover.jpg",
+    title: "The Eyes",
+    artist: "New Division",
   },
   {
     coverArt:
-      "https://ia801301.us.archive.org/18/items/mbid-8acb4d6d-2cf9-4685-b4e8-5c9937621691/mbid-8acb4d6d-2cf9-4685-b4e8-5c9937621691-5651042668_thumb500.jpg",
-    title: "Trax on da Rocks Vol. 2",
-    artist: "Thomas Bangalter",
+      "https://archive.org/download/FrankOceanchannelORANGE/channel%20ORANGE.png",
+    title: "Channel Orange",
+    artist: "Frank Ocean",
   },
   {
     coverArt:
-      "https://ia904509.us.archive.org/32/items/mbid-cb844a4d-c02f-3199-b949-1656b36722da/mbid-cb844a4d-c02f-3199-b949-1656b36722da-8145217760_thumb500.jpg",
-    title: "1999",
-    artist: "Cassius",
+    "https://archive.org/download/BROCKHAMPTONSATURATIONIII/SATURATION%20III.png",
+    title: "Saturation III",
+    artist: "BROCKHAMPTON",
   },
   {
     coverArt:
-      "https://ia903201.us.archive.org/6/items/mbid-747ed90c-6479-4cec-a98a-b320a5ef75be/mbid-747ed90c-6479-4cec-a98a-b320a5ef75be-18417637214_thumb500.jpg",
-    title: "Woman",
-    artist: "Justice",
+    "https://archive.org/download/the-weeknd-after-hours_20251004/0x1900-000000-80-0-0.jpg",
+    title: "After Hours",
+    artist: "The Weeknd",
   },
   {
     coverArt:
-      "https://ia800200.us.archive.org/5/items/mbid-9d0a791d-c0ed-4b99-bb31-976fad672408/mbid-9d0a791d-c0ed-4b99-bb31-976fad672408-1959533822_thumb500.jpg",
-    title: "Modjo",
-    artist: "Modjo",
+    "https://archive.org/download/kendrick-lamar-damn_202411/1-booklet%2001.jpg",
+    title: "Damn",
+    artist: "Kendrick Lamar",
   },
+  
   {
     coverArt:
-      "https://ia903106.us.archive.org/23/items/mbid-bbfc83ad-826f-4957-893d-a808105c828b/mbid-bbfc83ad-826f-4957-893d-a808105c828b-25063975521_thumb500.jpg",
-    title: "Random Access Memories",
-    artist: "Daft Punk",
+    "https://archive.org/download/LanaDelReyBorntoDie/%21Born%20to%20Die.png",
+    title: "Born to Die",
+    artist: "Lana Del Rey",
   },
 ]
 
@@ -102,10 +103,10 @@ const MarqueeItem = ({ album }: { album: Album }) => {
         variants={variants}
       >
         <motion.div className={textContainerClasses} variants={textVariants}>
-          <h3 className="text-white text-sm sm:text-base md:text-lg font-medium z-30">
+          <h3 className="marquee-text text-white text-sm sm:text-base md:text-lg font-medium z-30">
             {album.title}
           </h3>
-          <p className="text-neutral-300 text-xs sm:text-sm md:text-base z-30">
+          <p className="marquee-text text-neutral-300 text-xs sm:text-sm md:text-base z-30">
             {album.artist}
           </p>
         </motion.div>
